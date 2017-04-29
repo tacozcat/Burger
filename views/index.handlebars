@@ -1,0 +1,39 @@
+
+<h1>Burgers are LIFE!</h1>
+
+<h2 class = "uneaten">I wanna eat this burger</h2>
+
+<ul class = "uneaten">
+  {{#each burger}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger}}
+
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2 class = "eaten">I ate these burgers</h2>
+
+<ul class = "eaten">
+  {{#each burger}}
+    {{#if this.devoured}}
+      <li class = "eaten">
+        {{this.burger}}
+
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Load up some Burgers</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Burger Type</label>
+    <input type="text" id="newBurger" name="name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
